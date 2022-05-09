@@ -1,7 +1,7 @@
 local console = loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxArchiver/Console/main/src/main.lua"))():Init(true, "Remote-Offset Dumper");
 
 if rconsoleprint then
-    console.log("local offsets = {", "blue");
+    console.log("local" .. getfenv().tableName .. "= {", "blue");
 
     for _i, offset in pairs(game.ReplicatedStorage:GetDescendants()) do
         local OffsetName = string.lower(offset.Name);
