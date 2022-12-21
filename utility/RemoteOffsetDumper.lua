@@ -1,7 +1,11 @@
-local console = loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxArchiver/Console/main/src/main.lua"))():Init(true, "Remote-Offset Dumper");
+--[[
+
+    Console Library is considered deprecated, removed.
+
+]]
 
 if rconsoleprint then
-    console.log("local" .. getfenv().tableName .. "= {", "blue");
+    rconsoleprint("local Dump = {\n");
 
     for _i, offset in pairs(game.ReplicatedStorage:GetDescendants()) do
         local OffsetName = string.lower(offset.Name);
@@ -10,20 +14,20 @@ if rconsoleprint then
 
         if offset:IsA("BindableEvent") then
             if offset.Parent ~= game.ReplicatedStorage.DefaultChatSystemChatEvents then
-                console.log("    " .. OffsetName .. " = game." .. OffsetPath .. "[\"" .. FullOffsetName .. "\"]; --> BindableEvent", "light_green");
+                rconsoleprint("    " .. OffsetName .. " = game." .. OffsetPath .. "[\"" .. FullOffsetName .. "\"]; --> BindableEvent\n");
             end;
         elseif offset:IsA("RemoteEvent") then
             if offset.Parent ~= game.ReplicatedStorage.DefaultChatSystemChatEvents then
-                console.log("    " .. OffsetName .. " = game." .. OffsetPath .. "[\"" .. FullOffsetName .. "\"]; --> RemoteEvent", "yellow");
+                rconsoleprint("    " .. OffsetName .. " = game." .. OffsetPath .. "[\"" .. FullOffsetName .. "\"]; --> RemoteEvent\n");
             end;
         elseif offset:IsA("RemoteFunction") then
             if offset.Parent ~= game.ReplicatedStorage.DefaultChatSystemChatEvents then
-                console.log("    " .. OffsetName .. " = game." .. OffsetPath .. "[\"" .. FullOffsetName .. "\"]; --> RemoteFunction", "light_magenta");
+                rconsoleprint("    " .. OffsetName .. " = game." .. OffsetPath .. "[\"" .. FullOffsetName .. "\"]; --> RemoteFunction\n");
             end;
         end;
     end;
 
-    console.log("}", "blue");
+    rconsoleprint("}\n", "blue");
 else
     print("rconsoleprint not supported!");
 end;
