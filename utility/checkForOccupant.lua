@@ -1,12 +1,9 @@
-function checkForOccupant(inst)
-    if inst:IsA("Seat") then
-        if inst.Occupant then
-            return true;
-        else
-            return false;
-        end;
-    else
-        error("Instance is not Seat");
-        return;
-    end;
-end;
+function isOccupied(instance)
+    if instance:IsA("Seat") then
+        if instance.Occupant then
+            return true
+        elseif not instance.Occupant then
+            return false 
+        end
+    end
+end
