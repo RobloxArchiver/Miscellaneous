@@ -32,3 +32,7 @@ function Header(text, level)
         return
     end
 end
+
+function Text(text)
+    print(format(text))
+end
