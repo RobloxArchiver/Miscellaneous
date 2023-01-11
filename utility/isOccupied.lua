@@ -1,4 +1,4 @@
-function isOccupied(instance)
+local function isOccupied(instance)
     if instance:IsA("Seat") then
         if instance.Occupant then
             return true
@@ -7,3 +7,5 @@ function isOccupied(instance)
         end
     end
 end
+
+return isOccupied
