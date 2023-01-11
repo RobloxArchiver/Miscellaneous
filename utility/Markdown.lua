@@ -11,6 +11,8 @@ function Comment(text)
     print("<!-- " .. text .. " -->")
 end
 
+Comment("Made using ShittiestMarkdownWriterLua")
+
 function Header(text, level)
     local level = level or 1
     local text = format(text)
