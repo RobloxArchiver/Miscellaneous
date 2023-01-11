@@ -22,7 +22,13 @@ function Header(text: string, level: number)
         print("## " .. text)
     elseif level == 3 then
         print("### " .. text)
-    else
+	elseif level == 4 then
+		print("#### " .. text)
+    elseif level == 5 then
+		print("##### " .. text)
+	elseif level == 6 then
+	    print("###### " .. text)
+	else
         error("'level' is an invalid number")
         return
     end
