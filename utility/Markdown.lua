@@ -1,18 +1,17 @@
 --> Used to create and edit MD files, placeholder and super primitive!
---> Written for luau (base)
---> NOT WITH EXPLOITS IN MIND
+--> Written with Shitsploits in mind
 
 local function format(...)
     return tostring(...) .. "\n"
 end
 
-function Comment(text: string)
-	local text = format(text)
-
-	print("<!-- " .. text .. " -->")
+function Comment(text)
+    local text = format(text)
+    
+    print("<!-- " .. text .. " -->")
 end
 
-function Header(text: string, level: number)
+function Header(text, level)
     local level = level or 1
     local text = format(text)
     
