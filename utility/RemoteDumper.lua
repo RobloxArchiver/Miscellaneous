@@ -1,6 +1,7 @@
 assert(rconsoleprint, "'rconsoleprint' is not supported by your exploit")
 
-rconsoleprint("local remotes = {")
+rconsoleclear()
+rconsoleprint("local remotes = {\n")
 
 for _, remote in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
     local RemoteName = string.lower(remote.Name)

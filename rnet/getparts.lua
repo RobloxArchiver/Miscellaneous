@@ -28,7 +28,7 @@ end
 
 --> Adds all the unanchored parts (that can presumably be fucked with) to the list.
 for i,v in pairs(workspace:GetDescendants()) do
-    if v:IsA("Part") and v.Anchored == false and v.CanCollide == true and IsPlayer(v) then
+    if v:IsA("Part") and v.Anchored == false and v.CanCollide == true and PlayerCheck(v) then
         print("Found '" .. v.Name .. "' adding to the list!")
         table.insert(UnanchoredParts, v)
     end
@@ -38,11 +38,11 @@ end
 for i,v in pairs(UnanchoredParts) do
     local Humanoid = game.Players.LocalPlayer.Character.HumanoidRootPart
     local SavedCFrame = Humanoid.CFrame
-    local Net = SendPos(v.CFrame)
+    local Net = SendPosition(v.CFrame)
     
     repeat
         Net.Coord = v.CFrame
     until v.Position.Magnitude < 5
     
-    net.Event:Disconnect()
+    Net.Event:Disconnect()
 end
