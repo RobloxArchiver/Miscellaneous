@@ -36,5 +36,9 @@ function Header(text, level)
 end
 
 function Text(text)
-    print(format(text))
+    print(text)
+end
+
+function NewLine()
+    print("\n")
 end
