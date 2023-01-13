@@ -2,6 +2,7 @@
     "robloxLsp.diagnostics.globals": [
         "rnet",
         "setclipboard",
-        "rconsoleprint"
+        "rconsoleprint",
+        "rconsoleclear"
     ]
 }
